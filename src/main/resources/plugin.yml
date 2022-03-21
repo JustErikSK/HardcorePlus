@@ -1,0 +1,6 @@
+name: HardcorePlus
+version: 1.0
+main: me.minecraft.plugin.hardcoreplus.Hardcoreplus
+api-version: 1.18
+authors: [ JustErikSK ]
+description: Minecraft plugin for hardcore servers to make it more challenging. Can be also used on classic survival servers. Be prepared to die more than usual.
