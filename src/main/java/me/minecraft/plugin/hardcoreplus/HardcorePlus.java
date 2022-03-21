@@ -4,29 +4,33 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.plugin.java.JavaPlugin;
+
 public final class HardcorePlus extends JavaPlugin {
 
-    @Override
     public void onEnable() {
-
-        // Plugin startup logic
-        Bukkit.broadcastMessage(ChatColor.GREEN + "Enabled " + this.getName());
-        getServer().getPluginManager().registerEvents(new PlayerMovementListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerPickupItem(), this);
-        getServer().getPluginManager().registerEvents(new ArmoredHostileMobs(), this);
-        getServer().getPluginManager().registerEvents(new LostMinerals(), this);
-        getServer().getPluginManager().registerEvents(new PlayerDisableSleep(), this);
-        getServer().getPluginManager().registerEvents(new DisableMilkDrinking(), this);
-        getServer().getPluginManager().registerEvents(new LifeDiamonds(), this);
-        getServer().getPluginManager().registerEvents(new LessPassiveMobLoot(), this);
-        getServer().getPluginManager().registerEvents(new MobBlocks(), this);
+        if (!this.getServer().isHardcore()) {
+            Bukkit.broadcastMessage(ChatColor.YELLOW + "To use HardcorePlus plugin please enable hardcore in server.properties and restart your server.");
+            this.getServer().getPluginManager().disablePlugin(this);
+        } else {
+            Bukkit.broadcastMessage(ChatColor.GREEN + this.getName() + " >> Plugin has been enabled!");
+            this.getServer().getPluginManager().registerEvents(new PlayerMovementListener(), this);
+            this.getServer().getPluginManager().registerEvents(new PlayerPickupItem(), this);
+            this.getServer().getPluginManager().registerEvents(new ArmoredHostileMobs(), this);
+            this.getServer().getPluginManager().registerEvents(new LostMinerals(), this);
+            this.getServer().getPluginManager().registerEvents(new PlayerDisableSleep(), this);
+            this.getServer().getPluginManager().registerEvents(new DisableMilkDrinking(), this);
+            this.getServer().getPluginManager().registerEvents(new LifeDiamonds(), this);
+            this.getServer().getPluginManager().registerEvents(new LessPassiveMobLoot(), this);
+            this.getServer().getPluginManager().registerEvents(new MobBlocks(), this);
+            this.getServer().getPluginManager().registerEvents(new DisableEating(), this);
+            this.getServer().getPluginManager().registerEvents(new HarderLoot(), this);
+        }
     }
 
-    @Override
     public void onDisable() {
-
-        // Plugin shutdown logic
-        Bukkit.broadcastMessage(ChatColor.RED + "Disabled " + this.getName());
+        Bukkit.broadcastMessage(ChatColor.RED + this.getName() + " >> Plugin has been disabled!");
     }
-
 }

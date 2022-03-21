@@ -20,7 +20,7 @@ public class LessPassiveMobLoot implements Listener {
                 entity.getType() == EntityType.SHEEP || entity.getType() == EntityType.CHICKEN || entity.getType() == EntityType.PIG ||
                 entity.getType() == EntityType.COD || entity.getType() == EntityType.SALMON || entity.getType() == EntityType.RABBIT ||
                 entity.getType() == EntityType.SQUID || entity.getType() == EntityType.GLOW_SQUID || entity.getType() == EntityType.DONKEY ||
-                entity.getType() == EntityType.HORSE || entity.getType() == EntityType.MULE)) {
+                entity.getType() == EntityType.HORSE || entity.getType() == EntityType.MULE || entity.getType() == EntityType.LLAMA)) {
             int number = random.nextInt(11);
             if (number >= 7) {
                 event.getDrops().clear();
