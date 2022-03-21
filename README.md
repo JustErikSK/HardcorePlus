@@ -3,10 +3,16 @@ Plugin for hardcore servers to make them more challenging but also more fun. Can
 
 **INSTALLATION:**
 
-Download the plugin from spigot: https://www.spigotmc.org/resources/hardcoreplus.99441/.
+1. Use one of these download options:
 
-Put the downloaded file inside your server's plugin folder.
+Download HardcorePlus plugin from GitHub Releases: https://github.com/JustErikSK/HardcorePlus/releases.
 
-You can now start your server and play.
+Download HardcorePlus plugin from Spigot: https://www.spigotmc.org/resources/hardcoreplus.99441/.
+
+2. Put the downloaded file inside your server's plugin folder.
+
+3. Enable hardcore for your server in server.properties.
+
+4. You can now start your server and play.
 
 Enjoy your hardcore experience!
