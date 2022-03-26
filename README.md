@@ -11,7 +11,7 @@ Download HardcorePlus plugin from Spigot: https://www.spigotmc.org/resources/har
 
 2. Put the downloaded file inside your server's plugin folder.
 
-3. Enable hardcore for your server in server.properties.
+3. Enable hardcore for your server in server.properties (only needed if you're using version 1.1 or higher).
 
 4. You can now start your server and play.
 
