@@ -1,9 +1,12 @@
 package me.minecraft.plugin.hardcoreplus;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.MagmaCube;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,7 +30,7 @@ public class MobBlocks implements Listener {
                 this.spawnCreature1(loc);
             }
         }
-        if (block == Material.DRIPSTONE_BLOCK) {
+        if (block == Material.DRIPSTONE_BLOCK || block == Material.POINTED_DRIPSTONE) {
             number15 = random.nextInt(20);
             if (number15 >= 16) {
                 this.spawnCreature2(loc);
@@ -111,6 +114,36 @@ public class MobBlocks implements Listener {
                 this.spawnCreature15(loc);
             }
         }
+        if (block == Material.POPPY) {
+            int number16 = random.nextInt(17);
+            if (number16 >= 14) {
+                this.spawnCreature16(loc);
+            }
+        }
+        if  (block == Material.PUMPKIN) {
+            int number17 = random.nextInt(17);
+            if (number17 >= 14) {
+                this.spawnCreature17(loc);
+            }
+        }
+        if (block == Material.SAND) {
+            int number18 = random.nextInt(17);
+            if (number18 >= 14) {
+                this.spawnCreature18(loc);
+            }
+        }
+        if (block == Material.SLIME_BLOCK) {
+            int number19 = random.nextInt(17);
+            if (number19 >= 14) {
+                this.spawnCreature19(loc);
+            }
+        }
+        if (block == Material.WITHER_ROSE) {
+            int number20 = random.nextInt(17);
+            if (number20 >= 14) {
+                this.spawnCreature20(loc);
+            }
+        }
     }
     private void spawnCreature1(Location loc) {
         (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.PHANTOM);
@@ -156,5 +189,20 @@ public class MobBlocks implements Listener {
     }
     private void spawnCreature15(Location loc) {
         (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.GHAST);
+    }
+    private void spawnCreature16(Location loc) {
+        (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.MAGMA_CUBE);
+    }
+    private void spawnCreature17(Location loc) {
+        (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.SPIDER);
+    }
+    private void spawnCreature18(Location loc) {
+        (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.HUSK);
+    }
+    private void spawnCreature19(Location loc) {
+        (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.SLIME);
+    }
+    private void spawnCreature20(Location loc) {
+        (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.WITHER_SKELETON);
     }
 }

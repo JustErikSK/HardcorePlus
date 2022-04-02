@@ -54,6 +54,26 @@ public class PlayerPickupItem implements Listener {
         } else if (itemType == Material.TNT) {
             p.playEffect(p.getLocation().add(0,1,0), Effect.MOBSPAWNER_FLAMES, null);
             p.playEffect(p.getLocation(), Effect.GHAST_SHRIEK, null);
+        } else if (itemType == Material.AXOLOTL_BUCKET) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.OXIDISED_COPPER_SCRAPE, null);
+        } else if (itemType == Material.BAMBOO) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.COMPOSTER_FILL_ATTEMPT, null);
+        } else if (itemType == Material.BONE) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.BONE_MEAL_USE, null);
+        } else if (itemType == Material.CANDLE) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.EXTINGUISH, null);
+        } else if (itemType == Material.CREEPER_HEAD) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.GHAST_SHOOT, null);
+        } else if (itemType == Material.DIAMOND) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.PORTAL_TRAVEL, null);
+        } else if (itemType == Material.GHAST_TEAR) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.GHAST_SHRIEK, null);
+        } else if (itemType == Material.HONEY_BOTTLE) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.INSTANT_POTION_BREAK, null);
+        } else if (itemType == Material.LAVA_BUCKET) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.MOBSPAWNER_FLAMES, null);
+        } else if (itemType == Material.MELON_SLICE) {
+            p.playEffect(p.getLocation().add(0,1,0), Effect.ZOMBIE_CONVERTED_VILLAGER, null);
         }
     }
 }
