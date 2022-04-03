@@ -1,6 +1,6 @@
 name: HardcorePlus
 version: 1.2
-main: me.minecraft.plugin.hardcoreplus.Hardcoreplus
+main: me.minecraft.plugin.hardcoreplus.HardcorePlus
 api-version: 1.18
 authors: [ JustErikSK ]
 description: Minecraft plugin for hardcore servers to make it more challenging but also more fun.
