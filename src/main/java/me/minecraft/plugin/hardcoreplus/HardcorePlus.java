@@ -43,7 +43,7 @@ public final class HardcorePlus extends JavaPlugin {
                             player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 160, 0));
                         } else if (time == 18000) {
                             player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 200, 0));
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 300, 0));
+                            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 280, 0));
                         } else {
                         }
                     }
