@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
+import org.bukkit.event.weather.WeatherChangeEvent;
 
 public class PlayerDisableSleep implements Listener {
 
@@ -17,6 +18,14 @@ public class PlayerDisableSleep implements Listener {
         if (time >= 12000 && time <= 24000) {
             event.setCancelled(true);
             player.sendMessage(ChatColor.GRAY + "You're not tired right now!");
+        }
+    }
+
+    @EventHandler
+    public void onThunder(WeatherChangeEvent event) {
+        //Player player = event.getPlayer();
+        if (event.getWorld().isThundering() == true) {
+
         }
     }
 }
