@@ -10,6 +10,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.Calendar;
+import java.util.Random;
 
 public final class HardcorePlus extends JavaPlugin {
 
@@ -37,14 +38,33 @@ public final class HardcorePlus extends JavaPlugin {
                 @Override
                 public void run() {
                     for (Player player : getServer().getOnlinePlayers()) {
+                        Random random = new Random();
+                        int number = random.nextInt(5);
                         long time = player.getWorld().getTime();
                         if (time == 6000) {
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 0));
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 160, 0));
+                            if (number == 0) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 160, 0));
+                            } else if (number == 1) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 160, 0));
+                            } else if (number == 2) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 160, 0));
+                            } else if (number == 3) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 160, 0));
+                            } else {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 160, 0));
+                            }
                         } else if (time == 18000) {
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 200, 0));
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 280, 0));
-                        } else {
+                            if (number == 0) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 280, 0));
+                            } else if (number == 1) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 280, 0));
+                            } else if (number == 2) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 280, 0));
+                            } else if (number == 3) {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 280, 0));
+                            } else {
+                                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 280, 0));
+                            }
                         }
                     }
                 }
