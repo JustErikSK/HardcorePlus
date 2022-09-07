@@ -16,7 +16,7 @@ public class HarderLoot implements Listener {
         Random random = new Random();
         if (entity.getType() == EntityType.WITHER || entity.getType() == EntityType.DROWNED ||
                 entity.getType() == EntityType.EVOKER || entity.getType() == EntityType.PHANTOM ||
-                entity.getType() == EntityType.WITHER_SKELETON) {
+                entity.getType() == EntityType.WITHER_SKELETON || entity.getType() == EntityType.SHULKER) {
             int number = random.nextInt(11);
             if (number >= 5) {
                 event.getDrops().clear();
