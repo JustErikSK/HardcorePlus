@@ -11,14 +11,12 @@ public class DisableEating implements Listener {
     @EventHandler
     public void onFoodEating(PlayerItemConsumeEvent event) {
         ItemStack consumed = event.getItem();
-        if (consumed.getType().equals(Material.GOLDEN_APPLE) || consumed.getType().equals(Material.ENCHANTED_GOLDEN_APPLE) ||
+        if (consumed.getType().equals(Material.GOLDEN_APPLE) || consumed.getType().equals(Material.BREAD) ||
                 consumed.getType().equals(Material.COOKED_BEEF) || consumed.getType().equals(Material.COOKED_CHICKEN) ||
                 consumed.getType().equals(Material.COOKED_COD) || consumed.getType().equals(Material.COOKED_MUTTON) ||
                 consumed.getType().equals(Material.COOKED_PORKCHOP) || consumed.getType().equals(Material.COOKED_RABBIT) ||
                 consumed.getType().equals(Material.COOKED_SALMON) || consumed.getType().equals(Material.BAKED_POTATO) ||
-                consumed.getType().equals(Material.BEETROOT_SOUP) || consumed.getType().equals(Material.BREAD) ||
-                consumed.getType().equals(Material.GOLDEN_CARROT) || consumed.getType().equals(Material.MUSHROOM_STEW) ||
-                consumed.getType().equals(Material.PUMPKIN_PIE) || consumed.getType().equals(Material.RABBIT_STEW)) {
+                consumed.getType().equals(Material.GOLDEN_CARROT) || consumed.getType().equals(Material.PUMPKIN_PIE)) {
             event.setCancelled(true);
         }
     }
