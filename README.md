@@ -1,7 +1,7 @@
 # HardcorePlus
 Plugin for hardcore servers to make them more challenging but also more fun. Can be also used for classic survival servers.
 
-**This plugin is just a testing plugin, I will most probably not update it anymore after 1.3.1 update, maybe support updates but not major updates..**
+**This plugin is just a testing plugin, I will most probably not update it anymore after 1.4 update, maybe support updates but not major updates..**
 
 **INSTALLATION:**
 
