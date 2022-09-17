@@ -15,17 +15,9 @@ public class PlayerDisableSleep implements Listener {
         Player player = event.getPlayer();
         World world = player.getWorld();
         long time = world.getTime();
-        if (time >= 12000 && time <= 24000) {
+        if (time >= 1 && time <= 24000) {
             event.setCancelled(true);
             player.sendMessage(ChatColor.GRAY + "You're not tired right now!");
-        }
-    }
-
-    @EventHandler
-    public void onThunder(WeatherChangeEvent event) {
-        //Player player = event.getPlayer();
-        if (event.getWorld().isThundering() == true) {
-
         }
     }
 }

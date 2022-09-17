@@ -23,6 +23,7 @@ public final class HardcorePlus extends JavaPlugin {
 
         // Hardcore is no longer needed to be enabled to use this plugin, this feature will be brought back via datapack for both singleplayer and multiplayer.
 
+        // Class Handler
         Bukkit.broadcastMessage(ChatColor.GREEN + this.getName() + " >> Plugin has been enabled!");
         Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "CONSOLE ONLY : " + this.getName() + " >> Plugin has been enabled!");
         this.getServer().getPluginManager().registerEvents(new PlayerMovementListener(), this);
