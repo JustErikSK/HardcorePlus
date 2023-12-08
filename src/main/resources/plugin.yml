@@ -1,5 +1,5 @@
 name: HardcorePlus
-version: 1.4
+version: 1.3.1b
 main: me.minecraft.plugin.hardcoreplus.HardcorePlus
 api-version: 1.19
 authors: [ JustErikSK ]
