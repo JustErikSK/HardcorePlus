@@ -14,8 +14,7 @@ public final class HardcorePlus extends JavaPlugin {
         // Hardcore is no longer needed to be enabled to use this plugin, this feature will be brought back via datapack for both singleplayer and multiplayer.
 
         // Plugin startup message.
-        Bukkit.broadcastMessage(ChatColor.GREEN + this.getName() + " >> Plugin has been enabled!");
-        Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "CONSOLE ONLY : " + this.getName() + " >> Plugin has been enabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_GREEN + " HardcorePlus >> Plugin has been enabled!");
         // Class Handler
         this.getServer().getPluginManager().registerEvents(new PlayerMovementListener(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerPickupItem(), this);
@@ -30,6 +29,7 @@ public final class HardcorePlus extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new HarderLoot(), this);
 
         // Scheduler for random effects
+        // Random effects will be reworked
             getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
                 @Override
                 public void run() {
@@ -100,8 +100,7 @@ public final class HardcorePlus extends JavaPlugin {
 
     public void onDisable() {
         // Plugin shutdown message.
-        Bukkit.broadcastMessage(ChatColor.RED + this.getName() + " >> Plugin has been disabled!");
-        Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "To enable HardcorePlus again, please use PluginManager.");
-        Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "CONSOLE ONLY : " + this.getName() + " >> Plugin has been disabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + " HardcorePlus >> Plugin has been disabled!");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "To enable HardcorePlus again, please use PluginManager.");
     }
 }
