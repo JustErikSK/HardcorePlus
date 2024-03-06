@@ -20,6 +20,8 @@ public class MobBlocks implements Listener {
         Location loc = player.getLocation();
         int number;
 
+        // Rework needed so mobs spawned from blocks actually make sense, either they'll have something to do with the block or they'll be random
+
         // If player destroys Obsidian, there is a 25% chance for a Phantom to spawn.
         if (block == Material.OBSIDIAN) {
             number = random.nextInt(20);
@@ -51,7 +53,7 @@ public class MobBlocks implements Listener {
         // If player destroys Ancient Debris, there is a 5% chance for a Wither to spawn.
         else if (block == Material.ANCIENT_DEBRIS) {
             number = random.nextInt(40);
-            if (number >= 39) {
+            if (number >= 38) {
                 this.spawnWither(loc);
             }
         }
@@ -72,7 +74,7 @@ public class MobBlocks implements Listener {
         // If player destroys Cactus, there is a 40% chance for a Chicken to spawn.
         else if (block == Material.CACTUS) {
             number = random.nextInt(5);
-            if (number >= 4) {
+            if (number >= 3) {
                 this.spawnChicken(loc);
             }
         }
@@ -83,7 +85,7 @@ public class MobBlocks implements Listener {
         // If player destroys Gold Ore or Deepslate Gold Ore, there is a ~16.5% chance for a Piglin Brute to spawn.
         else if (block == Material.GOLD_ORE || block == Material.DEEPSLATE_GOLD_ORE) {
             number = random.nextInt(12);
-            if (number >= 11) {
+            if (number >= 10) {
                 this.spawnPiglinBrute(loc);
             }
         }
@@ -97,7 +99,7 @@ public class MobBlocks implements Listener {
         // If player destroys Nether Brick, Nether Brick Fence, Nether Brick Slab or Nether Brick Stairs, there is an ~18% chance for a Zoglin to spawn.
         else if (block == Material.NETHER_BRICK || block == Material.NETHER_BRICK_FENCE || block == Material.NETHER_BRICK_SLAB || block == Material.NETHER_BRICK_STAIRS) {
             number = random.nextInt(11);
-            if (number >= 10) {
+            if (number >= 9) {
                 this.spawnZoglin(loc);
             }
         }
@@ -171,7 +173,7 @@ public class MobBlocks implements Listener {
         // If player destroys Spore Blossom, there is a ~16.5% chance for a Tropical Fish to spawn.
         else if (block == Material.SPORE_BLOSSOM) {
             number = random.nextInt(12);
-            if (number >= 11) {
+            if (number >= 10) {
                 this.spawnTropicalFish(loc);
             }
         }
@@ -215,7 +217,7 @@ public class MobBlocks implements Listener {
     private void spawnChicken(Location loc) {
         (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.CHICKEN);
     }
-    // Evoker spawn.
+    // Endermite spawn.
     private void spawnEndermite(Location loc) {
         (Objects.requireNonNull(loc.getWorld())).spawnEntity(loc, EntityType.ENDERMITE);
     }
