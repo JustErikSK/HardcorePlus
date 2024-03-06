@@ -1,13 +1,16 @@
 package me.minecraft.plugin.hardcoreplus;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.plugin.Plugin;
 
 public class PlayerMovementListener implements Listener {
 
@@ -15,7 +18,7 @@ public class PlayerMovementListener implements Listener {
     public void onPlayerMove(PlayerMoveEvent event) {
         Player p = event.getPlayer();
         Block b = p.getLocation().getBlock().getRelative(BlockFace.DOWN);
-        int yAbovePlayer = 1;
+        //int yAbovePlayer = 1;
 
         // As long as you stand on one of these block, TNTs will constantly spawn on top of you:
         /* Calcite, Blackstone, Red Sand, Beacon, Raw Iron Block, Netherite Block, Chiseled Polished Blackstone, Smooth Basalt, Tnt,
@@ -30,8 +33,22 @@ public class PlayerMovementListener implements Listener {
             b.getType() == Material.LODESTONE || b.getType() == Material.REINFORCED_DEEPSLATE || b.getType() == Material.SCULK_SENSOR) {
 
             // Spawn primed tnt on top of player which will explode after 4 seconds.
-            TNTPrimed tnt = p.getWorld().spawn(p.getLocation().add(0,yAbovePlayer,0), TNTPrimed.class);
-            tnt.setFuseTicks(80);
+            //TNTPrimed tnt = p.getWorld().spawn(p.getLocation().add(0,yAbovePlayer,0), TNTPrimed.class);
+            //tnt.setFuseTicks(80);
+
+            int delayInSeconds = 10;
+            final int yAbovePlayer = 3;
+            final int fusingTimeInSeconds = 2;
+
+            Bukkit.getScheduler().scheduleSyncRepeatingTask((Plugin) this, new Runnable() {
+                @Override
+                public void run() {
+                    for (Player p : Bukkit.getOnlinePlayers()) {
+                        TNTPrimed tnt = (TNTPrimed) p.getWorld().spawnEntity(p.getLocation().add(0, yAbovePlayer, 0), EntityType.PRIMED_TNT);
+                        tnt.setFuseTicks(fusingTimeInSeconds * 20);
+                    }
+                }
+            }, delayInSeconds * 20, delayInSeconds * 20);
         }
     }
 }
