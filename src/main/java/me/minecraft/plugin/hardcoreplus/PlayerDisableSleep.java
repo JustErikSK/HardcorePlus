@@ -6,7 +6,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
-import org.bukkit.event.weather.WeatherChangeEvent;
 
 public class PlayerDisableSleep implements Listener {
 
@@ -17,7 +16,7 @@ public class PlayerDisableSleep implements Listener {
         long time = world.getTime();
         if (time >= 1 && time <= 24000) {
             event.setCancelled(true);
-            player.sendMessage(ChatColor.GRAY + "You're not tired right now!");
+            player.sendMessage(ChatColor.DARK_RED + "You're afraid that something might be watching you...");
         }
     }
 }
