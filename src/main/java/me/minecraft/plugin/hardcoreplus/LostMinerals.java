@@ -13,6 +13,7 @@ public class LostMinerals implements Listener {
     public void onBlockDestroy(BlockBreakEvent event) {
         Material block = event.getBlock().getType();
         Random random = new Random();
+        // 20% chance that these ores won't drop any item
         if (block == Material.DIAMOND_ORE || block == Material.DEEPSLATE_DIAMOND_ORE ||
                 block == Material.EMERALD_ORE || block == Material.DEEPSLATE_EMERALD_ORE ||
                 block == Material.IRON_ORE || block == Material.DEEPSLATE_IRON_ORE ||
@@ -22,8 +23,8 @@ public class LostMinerals implements Listener {
                 block == Material.REDSTONE_ORE || block == Material.DEEPSLATE_REDSTONE_ORE ||
                 block == Material.COPPER_ORE || block == Material.DEEPSLATE_COPPER_ORE ||
                 block == Material.NETHER_QUARTZ_ORE || block == Material.NETHER_GOLD_ORE) {
-            int number = random.nextInt(11);
-            if (number >= 8) {
+            int number = random.nextInt(100);
+            if (number > 80) {
                 event.setDropItems(false);
             }
         }
