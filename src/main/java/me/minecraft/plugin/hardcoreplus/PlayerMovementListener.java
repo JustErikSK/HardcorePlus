@@ -18,7 +18,7 @@ public class PlayerMovementListener implements Listener {
     public void onPlayerMove(PlayerMoveEvent event) {
         Player p = event.getPlayer();
         Block b = p.getLocation().getBlock().getRelative(BlockFace.DOWN);
-
+// Testing is needed
         // As long as you stand on one of these block, TNTs will constantly spawn on top of you every 2 seconds.
         if (b.getType() == Material.CALCITE ||
             b.getType() == Material.BLACKSTONE ||

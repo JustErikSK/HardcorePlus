@@ -17,7 +17,7 @@ public class PlayerPickupItem implements Listener {
         LivingEntity entity = event.getEntity();
         ItemStack item = event.getItem().getItemStack();
         Material itemType = item.getType();
-
+// Rework is needed
         if (entity instanceof Player) { // Check if the entity is player
             if (itemType == Material.WITHER_SKELETON_SKULL) {
                 // If WITHER SKELETON SKULL is picked up, player will get BLINDNESS and WITHER effect for 4 seconds.
