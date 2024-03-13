@@ -14,12 +14,18 @@ public class HarderLoot implements Listener {
     public void onRareMobKill(EntityDeathEvent event) {
         LivingEntity entity = event.getEntity();
         Random random = new Random();
-        if (entity.getType() == EntityType.WITHER || entity.getType() == EntityType.DROWNED ||
-                entity.getType() == EntityType.EVOKER || entity.getType() == EntityType.PHANTOM ||
-                entity.getType() == EntityType.WITHER_SKELETON || entity.getType() == EntityType.SHULKER ||
-                entity.getType() == EntityType.CREEPER) {
-            int number = random.nextInt(11);
-            if (number >= 5) {
+        if (entity.getType() == EntityType.WITHER ||
+            entity.getType() == EntityType.DROWNED ||
+            entity.getType() == EntityType.EVOKER ||
+            entity.getType() == EntityType.PHANTOM ||
+            entity.getType() == EntityType.WITHER_SKELETON ||
+            entity.getType() == EntityType.SHULKER ||
+            entity.getType() == EntityType.CREEPER ||
+            entity.getType() == EntityType.SKELETON ||
+            entity.getType() == EntityType.BLAZE) {
+
+            int number = random.nextInt(100);
+            if (number > 60) {
                 event.getDrops().clear();
             }
         }
