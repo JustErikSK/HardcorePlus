@@ -20,6 +20,8 @@ public class ArmoredHostileMobs implements Listener {
         ItemStack bow = new ItemStack(Material.BOW);
         ItemStack gold_sword = new ItemStack(Material.GOLDEN_SWORD);
         ItemStack dia_sword = new ItemStack(Material.DIAMOND_SWORD);
+        ItemStack iron_sword = new ItemStack(Material.IRON_SWORD);
+        ItemStack dia_axe = new ItemStack(Material.DIAMOND_AXE);
 
         if (entity instanceof Monster) {
             if (entity.getType() == EntityType.SKELETON) {
@@ -58,6 +60,13 @@ public class ArmoredHostileMobs implements Listener {
             else if (entity.getType() == EntityType.CREEPER) {
                 Creeper creeper = (Creeper)entity;
                 creeper.setPowered(true);
+            }
+            else if (entity.getType() == EntityType.ZOMBIE_VILLAGER) {
+                iron_sword.addEnchantment(Enchantment.DAMAGE_ALL, 5);
+                iron_sword.addEnchantment(Enchantment.KNOCKBACK, 5);
+            }
+            else if (entity.getType() == EntityType.VINDICATOR) {
+                dia_axe.addEnchantment(Enchantment.FIRE_ASPECT, 2);
             }
         }
     }
