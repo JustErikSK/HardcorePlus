@@ -11,7 +11,7 @@ import java.util.Random;
 public final class HardcorePlus extends JavaPlugin {
 
     public void onEnable() {
-        // Hardcore is no longer needed to be enabled to use this plugin, this feature will be brought back via datapack for both singleplayer and multiplayer.
+        // Hardcore is no longer needed to be enabled to use this plugin
 
         // Plugin startup message.
         Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_GREEN + " HardcorePlus >> Plugin has been enabled!");
@@ -35,13 +35,9 @@ public final class HardcorePlus extends JavaPlugin {
                 public void run() {
                     for (Player player : getServer().getOnlinePlayers()) {
                         Random random = new Random();
-                        int number = random.nextInt(10);
+                        int number = random.nextInt(9);
                         long time = player.getWorld().getTime();
 
-                        // If game time is at 6000 ticks, one of these noon effects will be applied to all players.
-                        // 5 effects are good and other 5 are bad.
-                        // Good effects have duration of 1200 ticks (1 minute) and amplifier of 1.
-                        // Bad effects have duration of 300 ticks (15 seconds) and amplifier of 0.
                         if (time == 6000) {
                             if (number == 0) { // 0 = Regeneration
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1200, 1));
@@ -53,15 +49,13 @@ public final class HardcorePlus extends JavaPlugin {
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 300, 0));
                             } else if (number == 4) { // 4 = Fire Resistance
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 1200, 1));
-                            } else if (number == 5) { // 5 = Unluck
-                                player.addPotionEffect(new PotionEffect(PotionEffectType.UNLUCK, 300, 0));
-                            } else if (number == 6) { // 6 = Damage Resistance
+                            } else if (number == 5) { // 5 = Damage Resistance
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1200, 1));
-                            } else if (number == 7) { // 7 = Weakness
+                            } else if (number == 6) { // 6 = Weakness
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 300, 0));
-                            } else if (number == 8) { // 8 = Jump Boost
+                            } else if (number == 7) { // 7 = Jump Boost
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 1200, 1));
-                            } else { // 9 = Levitation
+                            } else { // 8 = Levitation
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 300, 0));
                             }
                         }
@@ -86,10 +80,8 @@ public final class HardcorePlus extends JavaPlugin {
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 600, 0));
                             } else if (number == 7) { // 7 = Strength
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 360, 0));
-                            } else if (number == 8) { // 8 = Slow Digging
+                            } else { // 8 = Slow Digging
                                 player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_DIGGING, 600, 0));
-                            } else { // 9 = Night Vision
-                                player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 360, 0));
                             }
                         }
                     }
