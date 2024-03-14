@@ -92,6 +92,12 @@ public class ArmoredHostileMobs implements Listener {
                     (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(crossbow);
                 }
             }
+            else if (entity.getType() == EntityType.PIGLIN_BRUTE) {
+                dia_axe.addEnchantment(Enchantment.KNOCKBACK, 5);
+                dia_axe.addEnchantment(Enchantment.FIRE_ASPECT, 2);
+
+                (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(dia_axe);
+            }
         }
     }
 }
