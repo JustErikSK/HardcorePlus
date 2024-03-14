@@ -1,6 +1,8 @@
 package me.minecraft.plugin.hardcoreplus;
 
 import java.util.Objects;
+import java.util.Random;
+
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Creeper;
@@ -22,6 +24,8 @@ public class ArmoredHostileMobs implements Listener {
         ItemStack dia_sword = new ItemStack(Material.DIAMOND_SWORD);
         ItemStack iron_sword = new ItemStack(Material.IRON_SWORD);
         ItemStack dia_axe = new ItemStack(Material.DIAMOND_AXE);
+        ItemStack crossbow = new ItemStack(Material.CROSSBOW);
+        Random random = new Random();
 
         if (entity instanceof Monster) {
             if (entity.getType() == EntityType.SKELETON) {
@@ -64,9 +68,29 @@ public class ArmoredHostileMobs implements Listener {
             else if (entity.getType() == EntityType.ZOMBIE_VILLAGER) {
                 iron_sword.addEnchantment(Enchantment.DAMAGE_ALL, 5);
                 iron_sword.addEnchantment(Enchantment.KNOCKBACK, 5);
+
+                (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(iron_sword);
             }
             else if (entity.getType() == EntityType.VINDICATOR) {
                 dia_axe.addEnchantment(Enchantment.FIRE_ASPECT, 2);
+
+                (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(dia_axe);
+            }
+            else if (entity.getType() == EntityType.ZOMBIFIED_PIGLIN) {
+                (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(dia_sword);
+            }
+            else if (entity.getType() == EntityType.PIGLIN) {
+                int number = random.nextInt(100);
+                if (number < 50) {
+                    gold_sword.addEnchantment(Enchantment.DAMAGE_ALL, 3);
+
+                    (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(gold_sword);
+                } else {
+                    crossbow.addEnchantment(Enchantment.ARROW_DAMAGE, 2);
+                    crossbow.addEnchantment(Enchantment.ARROW_FIRE, 1);
+
+                    (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(crossbow);
+                }
             }
         }
     }
