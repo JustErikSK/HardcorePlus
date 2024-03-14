@@ -20,7 +20,9 @@ public class DisableEating implements Listener {
             consumed.getType().equals(Material.COOKED_SALMON) ||
             consumed.getType().equals(Material.BAKED_POTATO) ||
             consumed.getType().equals(Material.GOLDEN_CARROT) ||
-            consumed.getType().equals(Material.PUMPKIN_PIE)) {
+            consumed.getType().equals(Material.PUMPKIN_PIE) ||
+            consumed.getType().equals(Material.HONEY_BOTTLE) ||
+            consumed.getType().equals(Material.ENCHANTED_GOLDEN_APPLE) ) {
 
             event.setCancelled(true);
         }
