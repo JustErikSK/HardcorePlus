@@ -6,7 +6,7 @@
 
     <groupId>me.minecraft.plugin</groupId>
     <artifactId>hardcoreplus</artifactId>
-    <version>1.0</version>
+    <version>1.4</version>
     <packaging>jar</packaging>
 
     <name>HardcorePlus</name>
