@@ -22,7 +22,11 @@ public class HarderLoot implements Listener {
             entity.getType() == EntityType.SHULKER ||
             entity.getType() == EntityType.CREEPER ||
             entity.getType() == EntityType.SKELETON ||
-            entity.getType() == EntityType.BLAZE) {
+            entity.getType() == EntityType.BLAZE ||
+            entity.getType() == EntityType.ELDER_GUARDIAN ||
+            entity.getType() == EntityType.VINDICATOR ||
+            entity.getType() == EntityType.WITCH ||
+            entity.getType() == EntityType.SLIME){
 
             int number = random.nextInt(100);
             if (number > 60) {
