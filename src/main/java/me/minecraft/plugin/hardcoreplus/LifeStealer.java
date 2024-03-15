@@ -2,11 +2,12 @@ package me.minecraft.plugin.hardcoreplus;
 
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+
+import java.util.Objects;
 import java.util.Random;
 
 public class LifeStealer implements Listener {
@@ -18,9 +19,20 @@ public class LifeStealer implements Listener {
         Player player = event.getPlayer();
 
         if (block == Material.DIRT) {
-            int number = random.nextInt(100);
-            if (number > 50) {
 
+            double currentHealth = player.getHealth();
+            double maxHealth = Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue();
+
+            int number = random.nextInt(100);
+            if (number > 50 && currentHealth >= 4 && maxHealth >= 4) {
+                double newMaxHealth = maxHealth - 2;
+                Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(newMaxHealth);
+                player.setHealth(newMaxHealth);
+            }
+            else if (number < 50 && maxHealth <= 38) {
+                double newMaxHealth = maxHealth + 2;
+                Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(newMaxHealth);
+                player.setHealth(newMaxHealth);
             }
         }
     }
