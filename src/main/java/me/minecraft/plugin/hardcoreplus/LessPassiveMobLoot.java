@@ -16,7 +16,7 @@ public class LessPassiveMobLoot implements Listener {
     public void onMobKill(EntityDeathEvent event) {
         LivingEntity entity = event.getEntity();
         Random random = new Random();
-        if (entity instanceof Animals && (entity.getType() == EntityType.COW || entity.getType() == EntityType.MUSHROOM_COW ||
+        if (entity instanceof Animals && (entity.getType() == EntityType.COW || entity.getType() == EntityType.MOOSHROOM ||
                 entity.getType() == EntityType.SHEEP || entity.getType() == EntityType.CHICKEN || entity.getType() == EntityType.PIG ||
                 entity.getType() == EntityType.COD || entity.getType() == EntityType.SALMON || entity.getType() == EntityType.RABBIT ||
                 entity.getType() == EntityType.SQUID || entity.getType() == EntityType.GLOW_SQUID || entity.getType() == EntityType.DONKEY ||
