@@ -54,7 +54,7 @@ public class PlayerPickupItem implements Listener {
             }
             else if (itemType == Material.TNT) {
                 // If TNT is picked up, player will get INSTANT HARM 2 effect.
-                entity.addPotionEffect(new PotionEffect(PotionEffectType.HARM, 20,1));
+                entity.addPotionEffect(new PotionEffect(PotionEffectType.INSTANT_DAMAGE, 20,1));
             }
             else if (itemType == Material.AXOLOTL_BUCKET) {
                 // If AXOLOTL BUCKET is picked up, player will get ABSORPTION effect for 4 seconds.
@@ -66,7 +66,7 @@ public class PlayerPickupItem implements Listener {
             }
             else if (itemType == Material.GHAST_TEAR) {
                 // If GHAST TEAR is picked up, player will get SLOWNESS 2 effect for 3 seconds.
-                entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 60, 1));
+                entity.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 60, 1));
             }
         }
     }
