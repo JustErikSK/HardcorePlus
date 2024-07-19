@@ -50,7 +50,7 @@ public class PlayerMovementListener implements Listener {
                 @Override
                 public void run() {
                     for (Player p : Bukkit.getOnlinePlayers()) {
-                        TNTPrimed tnt = (TNTPrimed) p.getWorld().spawnEntity(p.getLocation().add(0, yAbovePlayer, 0), EntityType.PRIMED_TNT);
+                        TNTPrimed tnt = (TNTPrimed) p.getWorld().spawnEntity(p.getLocation().add(0, yAbovePlayer, 0), EntityType.TNT);
                         tnt.setFuseTicks(fusingTimeInSeconds * 20);
                     }
                 }
