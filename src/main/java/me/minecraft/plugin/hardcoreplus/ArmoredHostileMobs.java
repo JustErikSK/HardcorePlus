@@ -29,9 +29,9 @@ public class ArmoredHostileMobs implements Listener {
 
         if (entity instanceof Monster) {
             if (entity.getType() == EntityType.SKELETON) {
-                bow.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
-                bow.addEnchantment(Enchantment.ARROW_FIRE, 1);
-                bow.addEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
+                bow.addEnchantment(Enchantment.POWER, 5);
+                bow.addEnchantment(Enchantment.FLAME, 1);
+                bow.addEnchantment(Enchantment.PUNCH, 2);
 
                 (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(bow);
                 entity.getEquipment().setBoots(new ItemStack(Material.IRON_BOOTS));
@@ -40,7 +40,7 @@ public class ArmoredHostileMobs implements Listener {
                 entity.getEquipment().setHelmet(new ItemStack(Material.IRON_HELMET));
             }
             else if (entity.getType() == EntityType.ZOMBIE) {
-                gold_sword.addEnchantment(Enchantment.DAMAGE_ALL, 4);
+                gold_sword.addEnchantment(Enchantment.SHARPNESS, 4);
                 gold_sword.addEnchantment(Enchantment.FIRE_ASPECT, 2);
                 gold_sword.addEnchantment(Enchantment.KNOCKBACK, 2);
 
@@ -51,14 +51,14 @@ public class ArmoredHostileMobs implements Listener {
                 entity.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
             }
             else if (entity.getType() == EntityType.WITHER_SKELETON) {
-                dia_sword.addEnchantment(Enchantment.DAMAGE_ALL, 3);
+                dia_sword.addEnchantment(Enchantment.SHARPNESS, 3);
                 dia_sword.addEnchantment(Enchantment.FIRE_ASPECT, 1);
                 dia_sword.addEnchantment(Enchantment.KNOCKBACK, 2);
 
                 (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(dia_sword);
                 ItemStack iron_helm = new ItemStack(Material.IRON_HELMET);
-                iron_helm.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
-                iron_helm.addEnchantment(Enchantment.PROTECTION_PROJECTILE, 3);
+                iron_helm.addEnchantment(Enchantment.PROTECTION, 3);
+                iron_helm.addEnchantment(Enchantment.PROJECTILE_PROTECTION, 3);
                 entity.getEquipment().setHelmet(new ItemStack(iron_helm));
             }
             else if (entity.getType() == EntityType.CREEPER) {
@@ -66,7 +66,7 @@ public class ArmoredHostileMobs implements Listener {
                 creeper.setPowered(true);
             }
             else if (entity.getType() == EntityType.ZOMBIE_VILLAGER) {
-                iron_sword.addEnchantment(Enchantment.DAMAGE_ALL, 5);
+                iron_sword.addEnchantment(Enchantment.SHARPNESS, 5);
                 iron_sword.addEnchantment(Enchantment.KNOCKBACK, 5);
 
                 (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(iron_sword);
@@ -82,12 +82,12 @@ public class ArmoredHostileMobs implements Listener {
             else if (entity.getType() == EntityType.PIGLIN) {
                 int number = random.nextInt(100);
                 if (number < 50) {
-                    gold_sword.addEnchantment(Enchantment.DAMAGE_ALL, 3);
+                    gold_sword.addEnchantment(Enchantment.SHARPNESS, 3);
 
                     (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(gold_sword);
                 } else {
-                    crossbow.addEnchantment(Enchantment.ARROW_DAMAGE, 2);
-                    crossbow.addEnchantment(Enchantment.ARROW_FIRE, 1);
+                    crossbow.addEnchantment(Enchantment.POWER, 2);
+                    crossbow.addEnchantment(Enchantment.FLAME, 1);
 
                     (Objects.requireNonNull(entity.getEquipment())).setItemInMainHand(crossbow);
                 }
