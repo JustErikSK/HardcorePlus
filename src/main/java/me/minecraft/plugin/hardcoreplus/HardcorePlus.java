@@ -27,6 +27,7 @@ public final class HardcorePlus extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new MobBlocks(), this);
         this.getServer().getPluginManager().registerEvents(new DisableEating(), this);
         this.getServer().getPluginManager().registerEvents(new HarderLoot(), this);
+        this.getServer().getPluginManager().registerEvents(new LifeStealer(), this);
 
         // Scheduler for random effects
             getServer().getScheduler().scheduleSyncRepeatingTask(this, () -> {
