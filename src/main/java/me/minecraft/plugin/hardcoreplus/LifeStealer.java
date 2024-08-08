@@ -43,6 +43,8 @@ public class LifeStealer implements Listener {
         EntityType ent = event.getEntity().getType();
         Random random = new Random();
 
+        Player player = (Player) event.getEntity();
+
         double currentHealth = player.getHealth();
         double maxHealth = Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue();
 
