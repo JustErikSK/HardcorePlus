@@ -28,58 +28,39 @@ public final class HardcorePlus extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new DisableEating(), this);
         this.getServer().getPluginManager().registerEvents(new HarderLoot(), this);
         this.getServer().getPluginManager().registerEvents(new LifeStealer(), this);
+        this.getServer().getPluginManager().registerEvents(new Teleporting(), this);
 
         // Scheduler for random effects
             getServer().getScheduler().scheduleSyncRepeatingTask(this, () -> {
                 for (Player player : getServer().getOnlinePlayers()) {
                     Random random = new Random();
-                    int number = random.nextInt(9);
+                    int number = random.nextInt(4);
                     long time = player.getWorld().getTime();
 
+                    // If the game time is at 6000 ticks, one of these effects will be applied to all players.
+                    // Good effects have a duration of 200 ticks (10 seconds) or 500 ticks (25 seconds) and amplifier of 0.
                     if (time == 6000) {
-                        if (number == 0) { // 0 = Regeneration
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1200, 1));
-                        } else if (number == 1) { // 1 = Slow Digging
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.MINING_FATIGUE, 300, 0));
-                        } else if (number == 2) { // 2 = Speed
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 1200, 1));
-                        } else if (number == 3) { // 3 = Poison
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 300, 0));
-                        } else if (number == 4) { // 4 = Fire Resistance
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 1200, 1));
-                        } else if (number == 5) { // 5 = Damage Resistance
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 1200, 1));
-                        } else if (number == 6) { // 6 = Weakness
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 300, 0));
-                        } else if (number == 7) { // 7 = Jump Boost
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 1200, 1));
-                        } else { // 8 = Levitation
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 300, 0));
+                        if (number == 0) { // RANDOM NUMBER 0 = MINING FATIGUE
+                            player.addPotionEffect(new PotionEffect(PotionEffectType.MINING_FATIGUE, 500, 0));
+                        } else if (number == 1) { // RANDOM NUMBER 1 = POISON
+                            player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 200, 0));
+                        } else if (number == 2) { // RANDOM NUMBER 2 = WEAKNESS
+                            player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 500, 0));
+                        } else { // RANDOM NUMBER 3 = LEVITATION
+                            player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 200, 0));
                         }
                     }
-                    // If game time is at 18000 ticks, one of these midnight effects will be applied to all players.
-                    // 5 effects are good and other 5 are bad.
-                    // Good effects have duration of 360 ticks (18 seconds) and amplifier of 0.
-                    // Bad effects have duration of 600 ticks (30 seconds) and amplifier of 0.
+                    // If the game time is at 18000 ticks, one of these effects will be applied to all players.
+                    // Bad effects have duration of 300 ticks (15 seconds) or 600 ticks (30 seconds) and amplifier of 0.
                     else if (time == 18000) {
-                        if (number == 0) { // 0 = Darkness
+                        if (number == 0) { // RANDOM NUMBER 0 = DARKNESS
                             player.addPotionEffect(new PotionEffect(PotionEffectType.DARKNESS, 600, 0));
-                        } else if (number == 1) { // 1 = Saturation
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, 360, 0));
-                        } else if (number == 2) { // 2 = Nausea
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 600, 0));
-                        } else if (number == 3) { // 3 = Fast Digging
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 360, 0));
-                        } else if (number == 4) { // 4 = Wither
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 600, 0));
-                        } else if (number == 5) { // 5 = Health Boost
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.HEALTH_BOOST, 360, 0));
-                        } else if (number == 6) { // 6 = Blindness
+                        } else if (number == 1) { // RANDOM NUMBER 1 = NAUSEA
+                            player.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 300, 0));
+                        } else if (number == 2) { // RANDOM NUMBER 2 = WITHER
+                            player.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 300, 0));
+                        } else { // RANDOM NUMBER 3 = BLINDNESS
                             player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 600, 0));
-                        } else if (number == 7) { // 7 = Strength
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 360, 0));
-                        } else { // 8 = Slow Digging
-                            player.addPotionEffect(new PotionEffect(PotionEffectType.MINING_FATIGUE, 600, 0));
                         }
                     }
                 }
@@ -90,6 +71,6 @@ public final class HardcorePlus extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown message.
         Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + " HardcorePlus >> Plugin has been disabled!");
-        Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "To enable HardcorePlus again, please use PluginManager.");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.LIGHT_PURPLE + "To enable HardcorePlus again, please use PluginManager or restart the server.");
     }
 }
