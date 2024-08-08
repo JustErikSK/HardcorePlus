@@ -16,9 +16,11 @@ public class LifeDiamonds implements Listener {
         Material block = event.getBlock().getType();
         Random random = new Random();
         Player player = event.getPlayer();
+
+        double currentHealth = player.getHealth();
         if (block == Material.DIAMOND_ORE || block == Material.DEEPSLATE_DIAMOND_ORE) {
             int number = random.nextInt(100);
-            if (number > 80) {
+            if (number > 80 && currentHealth <= 7) {
                 player.damage(2);
             }
         }
